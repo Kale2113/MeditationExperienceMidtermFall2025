@@ -6,12 +6,12 @@ using UnityEngine.EventSystems;
 public class GazeButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Gaze Settings")]
-    public float gazeTime = 2f; // seconds to trigger
+    public float gazeTime = 2f; 
     private float gazeTimer = 0f;
     private bool isGazing = false;
 
     [Header("Radial Progress bar")]
-    public Image progressImage; // circular fill or bar to show progress
+    public Image progressImage; 
 
     [Header("Event")]
     public UnityEvent onGazeClick;
@@ -22,7 +22,7 @@ public class GazeButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         {
             gazeTimer += Time.deltaTime;
 
-            // Optional: show progress
+            
             if (progressImage != null)
                 progressImage.fillAmount = gazeTimer / gazeTime;
 

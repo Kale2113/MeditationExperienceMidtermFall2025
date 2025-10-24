@@ -4,17 +4,17 @@ public class RotateAround : MonoBehaviour
 {
     public Transform target;
     public int speed;
-    public bool rotate = false; // controls rotation
+    public bool rotate = false; 
 
     void Start()
     {
         if (target == null)
-            target = this.transform; // default to self
+            target = this.transform; 
     }
 
     void Update()
     {
-        if (!rotate) return; // only rotate if flag is true
+        if (!rotate) return; 
         transform.RotateAround(target.position, target.up, speed * Time.deltaTime);
     }
 }

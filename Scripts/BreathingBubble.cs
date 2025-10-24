@@ -5,7 +5,7 @@ using System.Collections;
 public class BreathingBubble : MonoBehaviour
 {
     [Header("UI Reference")]
-    public Image fillImage;  // Assign your bubble Image (set to Filled - Vertical)
+    public Image fillImage;  
 
     [Header("Animation Settings")]
     public float fillSpeed = 4f;
@@ -20,7 +20,7 @@ public class BreathingBubble : MonoBehaviour
         if (fillImage == null)
             fillImage = GetComponent<Image>();
 
-        // Start breathing loop automatically
+        
         breathingRoutine = StartCoroutine(BreathingCycle());
     }
 
@@ -28,13 +28,13 @@ public class BreathingBubble : MonoBehaviour
     {
         do
         {
-            // Inhale (fill up)
+            
             yield return StartCoroutine(AnimateFill(0f, 1f, fillSpeed));
 
-            // Hold
+            
             yield return new WaitForSeconds(holdTime);
 
-            // Exhale (unfill)
+            
             yield return StartCoroutine(AnimateFill(1f, 0f, unfillSpeed));
         }
         while (loop);
@@ -52,7 +52,7 @@ public class BreathingBubble : MonoBehaviour
         fillImage.fillAmount = end;
     }
 
-    // --- Show / Hide Controls ---
+  
 
     public void Show(bool visible)
     {
